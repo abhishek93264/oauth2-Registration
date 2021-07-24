@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org">
+<head th:replace="fragments :: html_head(pageTitle='Product Manager - Home')" />
+<body>
+<div class="container text-center">
+<th:block th:fragment="header">
+	<div sec:authorize="isAuthenticated()" class="text-center p-3">
+		<form th:action="@{/login}" method="post">
+			Welcome <b><span sec:authentication="name">Username</span></b>
+			&nbsp;
+			<input type="submit" value="Logout" />
+		</form>
+	</div>
+	</th:block>
+	
+	<div>
+		<br/>
+		<h4><a th:href="@{/list}">Home</a></h4>
+		<br/>
+		
+	</div>
+</div>
+</body>
+</html>
